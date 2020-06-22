@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Website</title>
+    <link rel="stylesheet" href="/Front end/all.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" 
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+    .topnav {
+        background: black;
+        background: rgba(0,0,0,0.8);
+        overflow: hidden;
+        width: 100%;
+        position: sticky;
+        top: 0;
+    }
+    .topnav a {
+        text-decoration: none;
+        float: left;
+        display: block;
+        font-size: 16px;
+        padding: 14px 16px;
+        color: rgba(255, 255, 255, 0.801);
+    }
+    a.active {
+        background-color: rgba(165, 42, 42, 0.801);
+    }
+    .topnav a:hover:not(.active) {
+        background-color: teal;
+    }
+    .topnav .icon {
+        display: none;
+    }
+    @media screen and (max-width:600px) {
+        .topnav a:not(:first-child) {
+            display: none;
+        }
+        .topnav a.icon {
+            float: right;
+            display: block;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .topnav.responsive {
+            position: relative;
+        }
+        .topnav.responsive .icon {
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .topnav.responsive a {
+            float: none;
+            display: block;
+        }
+    }
+    .grid-container {
+        display: grid;
+        grid-template-columns: auto;
+    }
+    #home, #about, #resume, #contact {
+        background-color: black;
+        padding: 20px 14px;
+    }
+    #home h1 {
+        color: white;
+        text-align: center;
+        font-weight: 50;
+    }
+    #home p {
+        color: rgba(255, 255, 255, 0.808);
+        text-align: center;
+    }
+    #home img {
+        border: 1px solid rgba(255, 255, 255, 0.801);
+        border-radius: 5px;
+        padding: 5px;
+        display: block;
+        margin: 0 auto;
+        height: auto;
+        max-width: 250px;
+    }
+    #about h2,h3 {
+        font-family: cursive;
+        color: white;
+        text-align: left;
+        font-weight: 25;
+    }
+    #about p {
+        color: rgba(255, 255, 255, 0.808);
+        text-align: center;
+        padding: 10px 20px;
+    }
+    #about section span {
+        color: rgba(255, 255, 255, 0.808);
+        text-align: left;
+    }
+    .skillbox {
+        padding: 5px;
+        background-color: lightslategray;
+        text-align: right;
+        width: 90%;
+        font-weight: bold;
+    }
+    #resume h2 {
+        font-family: cursive;
+        color: white;
+        text-align: left;
+        font-weight: 25;
+    }
+    .btn {
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-top: 10px;
+        color: white;
+        background-color: black;
+        border: none;
+        padding: 10px;
+        box-shadow: 0 0 4px 1px red;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+    }
+    .btn:hover {
+        animation: buttonanim 2s infinite;
+    }
+    @keyframes buttonanim {
+        0% {
+            box-shadow: 0 0 4px rgba(0, 0, 255, 0.582), 0 0 8px rebeccapurple,
+            0 0 16px orangered, 0 0 24px greenyellow;
+        }
+        100% {
+            box-shadow: 0 0 4px pink, 0 0 16px lightcoral,
+            0 0 24px teal;
+        }
+    }
+
+    #contact h2 {
+        font-family: cursive;
+        color: white;
+        text-align: left;
+        font-weight: 25;
+    }
+    #contact p {
+        color: lightgrey;
+    }
+    form {
+        color: white;
+    }
+    input, textarea {
+        background-color: lightgray;
+        border-radius: 2px;
+        border: none;
+        width: 100%;
+        margin-top: 5px;
+        padding: 5px 10px;
+        display: block;
+        font-size: 16px;
+    }
+    input:focus, textarea:focus {
+        outline: none;
+        background-image: linear-gradient(to right, white, lightpink);
+    }
+    textarea:focus {
+        height: 200px;
+    }
+    input[type=submit] {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        box-shadow:  0 0 4px 1px red;
+        background-color: whitesmoke;
+        cursor: pointer;
+        padding: 10px;
+        font-size: 16px;
+    }
+    .footer {
+        text-align: center;
+        background: black;
+        background: rgba(0,0,0,0.9);
+        width: 100%;
+        color: white;
+        padding: 10px 14px 20px;
+    }
+
+    @media screen and (min-width:600px) {
+        .grid-container {
+            grid-template-columns: auto auto;
+            grid-column-gap: 5px;
+            grid-template-rows: auto;
+        }
+        input, textarea {
+            width: 50%;
+        }
+    }
+
+
+    </style>
+</head>
+<body>
+    <div class="topnav" id="mytop">
+        <a href="#home" class="active">
+            <span class="fas fa-home"></span> Home</a>
+        <a href="#about">
+            <span class="fas fa-user"></span> About</a>
+        <a href="#resume">
+            <span class="fas fa-download"></span> Resume</a>
+        <a href="#contact">
+            <span class="fas fa-phone"></span> Contact</a>
+        <a href="javascript:void(0);" class="icon" onclick="myfunc()">
+            <span class="fas fa-bars"></span></a>
+    </div>
+    <div class="grid-container">
+        <div id="home">
+            <h1>Vivek<br>Kumawat.</h1>
+            <p>Web Developer and Web Designer</p>
+            <a href="https://lh3.googleusercontent.com/yfxjNlAPbn-dGgJ4h1XAEmZZwt88Q_XK5GNRjuFv-WohwsNOYTOINzFWDUzDw0j3z2V2GxMIlIv9Vex9zQS7SPbJc6Ds4UqLA0HC2YLcjiPTAQxSYBhQnW_hGRCfT2Qew2SbzJdr7Q=w2400&source=labnol.org"> <img src="https://lh3.googleusercontent.com/yfxjNlAPbn-dGgJ4h1XAEmZZwt88Q_XK5GNRjuFv-WohwsNOYTOINzFWDUzDw0j3z2V2GxMIlIv9Vex9zQS7SPbJc6Ds4UqLA0HC2YLcjiPTAQxSYBhQnW_hGRCfT2Qew2SbzJdr7Q=w600-h315-p-k" /> </a>
+        </div>
+        <div id="about">
+            <h2><span class="fas fa-user" style="color: lightblue;"></span>
+            About Me</h2>
+            <hr>
+            
+            <p>Hello, I am Vivek and I'm 2<sup>nd</sup> year student
+            of IIT Delhi. I love programming and I am currently a front-end 
+        developer but I'm also learning back-end as well. </p>
+        
+            <p>Apart from web development, I am also interested in Economics and 
+                I enjoy my leisure time by watching movies, reading books.
+                My favourite actor in <i>Bollywood</i> is "Akshay Kumar" and in 
+                <i>Hollywood</i> "Lenorado di Caprio".
+            </p>
+            
+            <h3>My Skills</h3>
+            <section>
+                <span>Web Development (HTML, CSS, javascript, jQuery, DOM, AJAX)</span>
+                <div class="skillbox">90%</div><br>
+                
+                <span>Java, C++</span>
+                <div class="skillbox" style="width: 70%;">70%</div>
+            </section>
+        </div>
+        <div id="resume">
+            <h2>
+            <span class="fas fa-briefcase" style="color: brown;"></span> Resume</h2>
+            <hr>
+            <button class="btn">
+              <a href="https://drive.google.com/file/d/1ZfvtGStcETjvbMW66P2sCVZPnuoM7cIN/view?usp=drivesdk">
+                <span class="fas fa-download"> Downlaod</span></a> 
+            </button>
+        </div>
+        <div id="contact">
+            <h2><span class="fas fa-phone" style="color: lightgreen;"></span>
+            Contact</h2>
+            <hr>
+            <p><span class="fas fa-map-marker"></span>
+            IIT Delhi, New Delhi</p>
+            
+            <p><span class="fas fa-envelope"></span> vivekkumawat315@gmail.com</p>
+            <p>You can send me an email quickly using <b>MyEmail</b> below:</p>
+            <form>
+                <label for="email">Email</label>
+                <input type="email" name="email" 
+                placeholder="Your email"    required autocomplete="on"><br>
+                <label for="msg">Message</label>
+                <textarea name="msg">Write message here.</textarea>
+                <input type="submit" value="Send Message"
+                 onclick="alert('Admin will add PHP file later.')">
+            </form>
+        </div>
+    </div>
+    <footer class="footer">
+        <h2>Contact Me on Social Media</h2>
+        <span class="fab fa-facebook"></span>
+        <span class="fab fa-instagram"></span>
+        <span class="fab fa-linkedin"></span>
+    </footer>
+    <script>
+        function myfunc() {
+            var x = document.getElementById("mytop");
+            if(x.className === "topnav") {
+                x.className += " responsive";
+            }
+            else {
+                x.className = "topnav";
+            }
+        }
+    </script>
+</body>
+</html>
